@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Thahira Kallumurikkal | Audiologist, Author & Social Worker</title>
+    <meta name="description" content="Portfolio of Dr. Thahira Kallumurikkal - Audiologist, Author (" Inthadhar"), and
+        Social Worker based in UAE.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Config for Tailwind to include fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        malayalam: ['Manjari', 'sans-serif'],
+                    },
+                    colors: {
+                        medical: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Sky blue
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        literary: {
+                            gold: '#d4af37',
+                            accent: '#b45309', // Amber-700
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .font-malayalam {
+            font-family: 'Manjari', sans-serif;
+        }
+
+        /* Smooth fade-in animation */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-slate-900 tracking-tight">
+                        Dr. Thahira Kallumurikkal<span class="text-medical-600">.</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home"
+                            class="hover:text-medical-600 transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#about"
+                            class="hover:text-medical-600 transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#audiology"
+                            class="hover:text-medical-600 transition-colors px-3 py-2 rounded-md text-sm font-medium">Audiology</a>
+                        <a href="#literary-activism"
+                            class="hover:text-medical-600 transition-colors px-3 py-2 rounded-md text-sm font-medium">Literary
+                            Activism</a>
+                        <a href="#video-features"
+                            class="hover:text-medical-600 transition-colors px-3 py-2 rounded-md text-sm font-medium">Media</a>
+                        <a href="#contact"
+                            class="bg-medical-600 text-white hover:bg-medical-700 transition-colors px-4 py-2 rounded-full text-sm font-medium shadow-md hover:shadow-lg">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="toggleMenu()"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-slate-700 hover:text-medical-600 hover:bg-slate-100 focus:outline-none transition-colors"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white border-t border-slate-100" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#home" onclick="toggleMenu()"
+                    class="block w-full px-3 py-4 rounded-md text-base font-medium text-slate-700 hover:text-medical-600 hover:bg-slate-50">Home</a>
+                <a href="#about" onclick="toggleMenu()"
+                    class="block w-full px-3 py-4 rounded-md text-base font-medium text-slate-700 hover:text-medical-600 hover:bg-slate-50">About</a>
+                <a href="#audiology" onclick="toggleMenu()"
+                    class="block w-full px-3 py-4 rounded-md text-base font-medium text-slate-700 hover:text-medical-600 hover:bg-slate-50">Audiology</a>
+                <a href="#literary-activism" onclick="toggleMenu()"
+                    class="block w-full px-3 py-4 rounded-md text-base font-medium text-slate-700 hover:text-medical-600 hover:bg-slate-50">Literary
+                    Activism</a>
+                <a href="#video-features" onclick="toggleMenu()"
+                    class="block w-full px-3 py-4 rounded-md text-base font-medium text-slate-700 hover:text-medical-600 hover:bg-slate-50">Media</a>
+                <a href="#contact" onclick="toggleMenu()"
+                    class="block w-full px-3 py-4 rounded-md text-base font-medium text-medical-600 font-semibold bg-slate-50">Contact
+                    Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-20 lg:pt-32 pb-16 lg:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="lg:order-1 order-2 fade-in-up">
+                    <span
+                        class="inline-block py-1 px-3 rounded-full bg-medical-50 text-medical-700 text-sm font-semibold tracking-wide mb-4">Audiologist
+                        | Author | Social Worker</span>
+                    <h1 class="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight mb-4">
+                        Healing Ears, <br>
+                        Touching Hearts, <br>
+                        <span class="text-medical-600">Inspiring Minds.</span>
+                    </h1>
+                    <h2 class="text-2xl lg:text-3xl font-malayalam text-slate-600 mb-6 leading-relaxed">
+                        കേൾവിയുടെ ലോകത്ത് സാന്ത്വനമായി, <br>
+                        അക്ഷരങ്ങളുടെ ലോകത്ത് വെളിച്ചമായി.
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8 max-w-lg">
+                        Dedicated to improving hearing health while empowering society through literature and social
+                        activism. Medical Wing In-charge (IYC UAE).
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#about"
+                            class="inline-flex justify-center items-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-medical-600 hover:bg-medical-700 transition-all transform hover:scale-105">
+                            Read My Story
+                        </a>
+                        <a href="#contact"
+                            class="inline-flex justify-center items-center px-8 py-3 border border-slate-300 text-base font-medium rounded-full text-slate-700 bg-white hover:bg-slate-50 transition-all">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <!-- Image/Visual -->
+                <div class="lg:order-2 order-1 fade-in-up delay-200 flex justify-center lg:justify-end">
+                    <div class="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[500px] lg:h-[500px]">
+                        <div class="absolute inset-0 bg-medical-100 rounded-full blur-3xl opacity-50 animate-pulse">
+                        </div>
+                        <!-- Placeholder for Professional Photo -->
+                        <div
+                            class="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl bg-slate-200 border-4 border-white flex items-center justify-center text-slate-400">
+                            <img src="img/thahira_kallumurikkal.jpg" alt="Dr. Thahira Kallumurikkal"
+                                class="object-cover w-full h-full hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg flex items-center gap-3 animate-bounce"
+                            style="animation-duration: 3s;">
+                            <div class="bg-literary-gold/20 p-2 rounded-full text-literary-accent">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-semibold uppercase">Latest Book</p>
+                                <p class="font-malayalam font-bold text-slate-800">ഇൻതിദാർ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-6">About Me</h2>
+            <div class="w-16 h-1 bg-medical-500 mx-auto mb-10 rounded-full"></div>
+
+            <div class="prose prose-lg mx-auto text-slate-600 leading-relaxed font-light">
+                <p class="mb-6">
+                    I am a multifaceted professional based in the UAE, balancing the worlds of medical science and
+                    creative literature. As an alumnus of <span class="font-semibold text-slate-800">Salus University
+                        (Osborne College of Audiology)</span>, I have dedicated my career to diagnosing and treating
+                    hearing and balance disorders.
+                </p>
+                <p class="mb-6">
+                    Beyond the clinic, I find my voice in the written word and social activism. Serving as the <span
+                        class="font-semibold text-slate-800">Medical Wing In-charge of the International Youth Congress
+                        (UAE)</span>, I strive to bridge the gap between healthcare and community welfare. My journey is
+                    one of continuous learning, healing, and telling stories that matter.
+                </p>
+            </div>
+
+            <!-- Quick Stats/Roles -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 border-t border-slate-100 pt-12">
+                <div class="p-4">
+                    <span class="block text-4xl font-bold text-medical-600 mb-1">10+</span>
+                    <span class="text-sm uppercase tracking-wide text-slate-500">Years Experience</span>
+                </div>
+                <div class="p-4">
+                    <span class="block text-4xl font-bold text-literary-accent mb-1">2+</span>
+                    <span class="text-sm uppercase tracking-wide text-slate-500">Books Published</span>
+                </div>
+                <div class="p-4">
+                    <span class="block text-4xl font-bold text-medical-600 mb-1">50+</span>
+                    <span class="text-sm uppercase tracking-wide text-slate-500">Medical Camps</span>
+                </div>
+                <div class="p-4">
+                    <span class="block text-4xl font-bold text-slate-700 mb-1">UAE</span>
+                    <span class="text-sm uppercase tracking-wide text-slate-500">Based in</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Wing (Audiology) -->
+    <section id="audiology" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">Expert Audiology Services</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Providing comprehensive hearing care with
+                    empathy and clinical precision.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow border-t-4 border-medical-500">
+                    <div
+                        class="w-12 h-12 bg-medical-50 rounded-lg flex items-center justify-center text-medical-600 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Diagnostic Audiology</h3>
+                    <p class="text-slate-600">State-of-the-art evaluation of hearing thresholds and identification of
+                        auditory disorders for all age groups.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow border-t-4 border-medical-500">
+                    <div
+                        class="w-12 h-12 bg-medical-50 rounded-lg flex items-center justify-center text-medical-600 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Balance Disorders</h3>
+                    <p class="text-slate-600">Specialized assessment and management of vestibular issues, vertigo, and
+                        dizziness.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow border-t-4 border-medical-500">
+                    <div
+                        class="w-12 h-12 bg-medical-50 rounded-lg flex items-center justify-center text-medical-600 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Pediatric Care</h3>
+                    <p class="text-slate-600">Gentle, specialized care for children, ensuring early detection and
+                        intervention for developmental success.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="https://www.salus.edu/news-stories/2022/07/audiology-grad-more-prepared-now-to-do-even-bigger-things.html"
+                    target="_blank"
+                    class="inline-flex items-center text-medical-700 hover:text-medical-900 font-medium">
+                    Read more about my academic journey
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Literary Activism & Social Impact Section -->
+    <section id="literary-activism" class="py-24 relative overflow-hidden bg-[#fdfbf7]">
+        <!-- Background Texture -->
+        <div class="absolute inset-0 opacity-40 pointer-events-none"
+            style="background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png'); mix-blend-mode: multiply;">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-20 fade-in-up">
+                <span class="text-literary-accent font-bold tracking-widest text-sm uppercase mb-3 block">Editorial
+                    Showcase</span>
+                <h2 class="text-4xl md:text-5xl font-malayalam font-bold text-slate-900 mb-4 leading-tight">
+                    എഴുത്തും സാമൂഹിക ഇടപെടലുകളും
+                </h2>
+                <h3 class="text-2xl font-light text-slate-600 font-serif italic">Literary Activism & Social Impact</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-literary-gold to-literary-accent mx-auto mt-6 rounded-full">
+                </div>
+            </div>
+
+            <!-- Hero Book Spotlight -->
+            <div
+                class="bg-white rounded-3xl shadow-2xl overflow-hidden mb-24 border border-slate-100 fade-in-up delay-100">
+                <div class="grid lg:grid-cols-2">
+                    <!-- 3D Book Visual Area -->
+                    <div class="bg-slate-100 p-12 lg:p-20 flex items-center justify-center relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-slate-200 opacity-70">
+                        </div>
+                        <!-- Book Mockup Wrapper -->
+                        <div
+                            class="relative w-56 h-80 sm:w-72 sm:h-[450px] transform hover:scale-105 transition-transform duration-700 ease-out perspective-1000 group">
+                            <!-- Shadow -->
+                            <div
+                                class="absolute -bottom-12 left-4 right-4 h-8 bg-black/30 blur-xl rounded-[50%] transform scale-y-50 group-hover:scale-y-75 group-hover:blur-2xl transition-all duration-700">
+                            </div>
+                            <!-- Book Image -->
+                            <img src="img/inthadhar.jpg" alt="Inthadhar Book Cover"
+                                class="w-full h-full object-cover rounded-r-lg rounded-l-sm shadow-[15px_10px_30px_-5px_rgba(0,0,0,0.3)] transform rotate-y-[-15deg] group-hover:rotate-y-0 transition-transform duration-700 origin-left border-l-4 border-slate-800">
+                            <!-- Spine Hint -->
+                            <div
+                                class="absolute top-1 bottom-1 left-0 w-2 bg-gradient-to-r from-white/30 to-transparent pointer-events-none">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book Details -->
+                    <div class="p-10 lg:p-16 flex flex-col justify-center bg-white relative">
+                        <!-- Floating Quote Element -->
+                        <div class="absolute top-8 right-8 text-literary-gold/20">
+                            <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z">
+                                </path>
+                            </svg>
+                        </div>
+
+                        <span
+                            class="px-4 py-1.5 bg-literary-gold/10 text-literary-accent text-xs font-bold uppercase tracking-widest rounded-full self-start mb-6">Featured
+                            Publication</span>
+                        <h2 class="text-4xl md:text-5xl font-malayalam font-bold text-slate-900 mb-6">ഇൻതിദാർ <span
+                                class="text-2xl font-serif text-slate-500 font-normal block mt-2">(Inthadhar)</span>
+                        </h2>
+
+                        <p class="text-lg text-slate-600 leading-relaxed mb-8 font-light">
+                            "Waiting is not merely an act of patience; it is a profound journey of the soul." <br><br>
+                            <span class="italic font-serif">Inthadhar</span> captures the silent echoes of human
+                            resilience. Written with the precision of a medical professional and the empathy of a social
+                            worker, this collection explores the raw, unfiltered emotions that define our shared
+                            humanity.
+                        </p>
+
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <a href="https://www.amazon.in/Inthadhar-Dr-Thahira-Kallumurikkal/dp/9394472762"
+                                target="_blank"
+                                class="flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-all hover:shadow-lg transform hover:-translate-y-1">
+                                <span class="font-bold">Get on Amazon</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                            <span class="text-sm text-slate-500 font-medium px-4">Available in Paperback</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Philosophy Section -->
+            <div class="grid md:grid-cols-12 gap-12 mb-24 items-center fade-in-up delay-200">
+                <div class="md:col-span-4 relative">
+                    <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg relative">
+                        <img src="img/uaeondaiz.jpg" alt="Dr. Thahira Speaking" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="font-bold text-lg">Words as a Tool for Change</p>
+                        </div>
+                    </div>
+                    <!-- Decorative element -->
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-medical-500/10 rounded-full -z-10 blur-xl"></div>
+                </div>
+                <div class="md:col-span-8">
+                    <h3 class="text-3xl font-bold text-slate-900 mb-6">The Pen is a Scalpel for the Soul</h3>
+                    <p class="text-lg text-slate-600 mb-6 font-light leading-relaxed">
+                        For Dr. Thahira, writing is not a leisure activity—it is a form of social intervention. As the
+                        <span class="font-medium text-slate-900">Medical Wing In-charge of the International Youth
+                            Congress (UAE)</span>, she witnesses the silent struggles of the expatriate community and
+                        the youth. She uses her literary voice to:
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 rounded-full bg-literary-gold/20 flex items-center justify-center text-literary-accent mt-1 mr-4">✓</span>
+                            <span class="text-slate-700">Address complex social nuances and mental health
+                                stigmas.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 rounded-full bg-literary-gold/20 flex items-center justify-center text-literary-accent mt-1 mr-4">✓</span>
+                            <span class="text-slate-700">Empower the youth to find their own voice and identity.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 rounded-full bg-literary-gold/20 flex items-center justify-center text-literary-accent mt-1 mr-4">✓</span>
+                            <span class="text-slate-700">Heal minds through the therapeutic power of
+                                storytelling.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dynamic Masonry Grid: Recent Writings & Media -->
+            <div class="mb-12">
+                <div class="flex items-center justify-between mb-10">
+                    <h3 class="text-2xl font-bold text-slate-900">Recent Writings & Media</h3>
+                    <a href="#contact"
+                        class="text-medical-600 hover:text-medical-800 font-medium text-sm flex items-center">
+                        View Archive <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Article Card 1 (Text based) -->
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border-l-4 border-literary-accent group cursor-pointer fade-in-up delay-100">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2 block">Social Media
+                            Writing</span>
+                        <h4
+                            class="text-xl font-bold text-slate-900 mb-3 group-hover:text-literary-accent transition-colors font-malayalam">
+                            പ്രവാസവും സ്ത്രീയും</h4>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-3">A reflection on the dual challenges faced by
+                            women in the diaspora—balancing professional aspirations with cultural expectations.</p>
+                        <span class="text-medical-600 text-sm font-medium flex items-center">
+                            Read on Facebook <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <!-- Article Card 2 (Image based) -->
+                    <div
+                        class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden group cursor-pointer fade-in-up delay-200">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="img/uaemomento.jpg" alt="IYC Event"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-md text-xs font-bold text-slate-900">
+                                IYC Event</div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-slate-900 mb-2">Medical Wing Leadership</h4>
+                            <p class="text-slate-600 text-sm">Organizing health camps and awareness sessions for the
+                                labor community in Dubai.</p>
+                        </div>
+                    </div>
+
+                    <!-- Article Card 3 (Quote Card) -->
+                    <div
+                        class="bg-slate-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow text-white flex flex-col justify-center relative overflow-hidden group fade-in-up delay-300">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-white/10 transition-colors">
+                        </div>
+                        <svg class="w-8 h-8 text-literary-gold mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z">
+                            </path>
+                        </svg>
+                        <p class="text-xl font-malayalam font-medium leading-relaxed mb-4">"സാമൂഹിക മാറ്റം തുടങ്ങുന്നത്
+                            ഓരോരുത്തരുടെയും ഉള്ളിൽ നിന്നാണ്."</p>
+                        <p class="text-sm text-slate-400 uppercase tracking-widest font-bold">- Quote of the Day</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Features Section -->
+    <section id="video-features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-medical-600 font-bold tracking-widest text-sm uppercase mb-3 block">Media</span>
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">Video Features</h2>
+                <div class="w-16 h-1 bg-medical-500 mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="flex justify-center fade-in-up">
+                <div
+                    class="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-100">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/inavv2J3vEY?rel=0&modestbranding=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section id="contact" class="bg-slate-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+                    <p class="text-slate-400 mb-8">Have a question about audiology, my books, or social initiatives? I'd
+                        love to hear from you.</p>
+
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-400 mb-1">Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-medical-500 transition-colors"
+                                placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-400 mb-1">Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-medical-500 transition-colors"
+                                placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-400 mb-1">Message</label>
+                            <textarea id="message" rows="4"
+                                class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-medical-500 transition-colors"
+                                placeholder="Your Message..."></textarea>
+                        </div>
+                        <button type="button"
+                            class="w-full bg-medical-600 hover:bg-medical-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Connect Info -->
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">Connect</h2>
+                        <div class="flex space-x-6 mb-10">
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/dr-thahira-kallumurikkal-50057128/" target="_blank"
+                                class="text-slate-400 hover:text-white transition-colors">
+                                <span class="sr-only">LinkedIn</span>
+                                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/thahira.km.35" target="_blank"
+                                class="text-slate-400 hover:text-white transition-colors">
+                                <span class="sr-only">Facebook</span>
+                                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </a>
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/thahira_kallumurikkal" target="_blank"
+                                class="text-slate-400 hover:text-white transition-colors">
+                                <span class="sr-only">Instagram</span>
+                                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="border-t border-slate-700 pt-8 mt-8 lg:mt-0 text-slate-500 text-sm">
+                        <p>&copy; 2024 Dr. Thahira Kallumurikkal. All rights reserved.</p>
+                        <p class="mt-2">Created with care for a visionary.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('py-2');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('py-2');
+            }
+        });
+
+        // Smooth scroll for anchor links (extra safety for older browsers)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
